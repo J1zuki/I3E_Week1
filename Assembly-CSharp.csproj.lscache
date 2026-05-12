@@ -52,7 +52,9 @@ TemporaryDependencyNodeTargetIdentifier=netstandard2.1
 [sourceFiles]
 Assets/
  CoinRotation.cs
+ Collectible.cs
  CollisionDetector.cs
+ Door.cs
  Mini First Person Controller/Scripts/Components/
   Crouch.cs
   FirstPersonAudio.cs
