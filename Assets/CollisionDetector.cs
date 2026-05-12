@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CollisionDetector : MonoBehaviour
 {
@@ -33,5 +34,10 @@ public class CollisionDetector : MonoBehaviour
                 print($"Keep searching! You only have {score}/{totalItemsToCollect}");
             }
         }
+    }
+
+    void OnInteract(InputValue Value)
+    {
+        print("Interacting!");
     }
 }
