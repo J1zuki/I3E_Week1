@@ -79,12 +79,10 @@ public class CollisionDetector : MonoBehaviour
                 return;
             }
 
-            Door door = targetObject.GetComponent<Door>();
-
-            if (door != null)
-            {
-                door.Interact();
-                return;
+            Door door = targetObject.GetComponent<Door>(); 
+            if (door != null) 
+            { 
+                door.Interact(); return; 
             }
         }
 

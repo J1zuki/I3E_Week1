@@ -2147,6 +2147,7 @@ GameObject:
   - component: {fileID: 1814087362}
   - component: {fileID: 1814087361}
   - component: {fileID: 1814087363}
+  - component: {fileID: 1814087364}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -2204,6 +2205,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
   rotateAmount: {x: 0, y: 90, z: 0}
+--- !u!95 &1814087364
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814087360}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 91236a55752ae0b4d889c3d8c16b01b2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1837298662
 GameObject:
   m_ObjectHideFlags: 0
