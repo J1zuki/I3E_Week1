@@ -74,7 +74,7 @@ public class CollisionDetector : MonoBehaviour
             if (collectible != null)
             {
                 score += collectible.score;
-                collectible.Collect();
+                collectible.Interact();
                 print($"Score: {score}");
                 return;
             }
