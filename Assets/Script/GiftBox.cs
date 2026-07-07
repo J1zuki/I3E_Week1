@@ -1,31 +1,33 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class GiftBox : MonoBehaviour
+public class GiftBoxScript : MonoBehaviour
 {
-    [SerializeField] private GameObject ballPrefab;
-    [SerializeField] private Transform ballSpawnPoint;
+    public GameObject ballObject;
 
     private int pressCount = 0;
     private bool playerNear = false;
 
+    private void Start()
+    {
+        ballObject.SetActive(false);
+    }
+
     private void Update()
     {
-        if (playerNear && Input.GetKeyDown(KeyCode.E))
+        if (playerNear && Keyboard.current.eKey.wasPressedThisFrame)
         {
             pressCount++;
-            Debug.Log("Pressed E: " + pressCount);
+            Debug.Log("GiftBox Pressed: " + pressCount);
 
             if (pressCount >= 3)
             {
-                SpawnBall();
+                ballObject.SetActive(true);
                 Destroy(gameObject);
+
+                Debug.Log("GiftBox destroyed. Ball spawned.");
             }
         }
-    }
-
-    private void SpawnBall()
-    {
-        Instantiate(ballPrefab, ballSpawnPoint.position, ballSpawnPoint.rotation);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -33,7 +35,7 @@ public class GiftBox : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerNear = true;
-            Debug.Log("Press E 3 times to open the GiftBox.");
+            Debug.Log("Press E 3 times to destroy GiftBox.");
         }
     }
 

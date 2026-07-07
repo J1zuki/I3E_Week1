@@ -1,25 +1,23 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class BallScript : MonoBehaviour
 {
-    [SerializeField] private float pushForce = 8f;
+    public Rigidbody ballRigidbody;
+    public float pushForce = 8f;
 
     private bool playerNear = false;
-    private Rigidbody rb;
-
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
 
     private void Update()
     {
-        if (playerNear && Input.GetKeyDown(KeyCode.E))
+        if (playerNear && Keyboard.current.eKey.wasPressedThisFrame)
         {
-            Vector3 pushDirection = transform.position - Camera.main.transform.position;
-            pushDirection.y = 0f;
+            Vector3 direction = transform.parent.position - Camera.main.transform.position;
+            direction.y = 0;
 
-            rb.AddForce(pushDirection.normalized * pushForce, ForceMode.Impulse);
+            ballRigidbody.AddForce(direction.normalized * pushForce, ForceMode.Impulse);
+
+            Debug.Log("Ball pushed.");
         }
     }
 
